@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,12 +44,14 @@ public abstract class Damagable : MonoBehaviour, ITakeDamage
         DamageScore();
         health -= damage;
         if (health <= 0)
+        {
             Destroy(gameObject);
+        }
     }
 
     private void DamageScore() 
     {
         scoreBoard.ScoreHit(scorePerHit);
     }
-    
+
 }
