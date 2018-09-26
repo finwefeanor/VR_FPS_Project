@@ -10,7 +10,6 @@ public class EnemyTarget : MonoBehaviour {
     ScoreBoard scoreBoard;
     [SerializeField] float health = 50f;
 
-
     void Start() 
     {
         if (gameObject.GetComponent<BoxCollider>() == null && gameObject.GetComponent<MeshCollider>() == false)

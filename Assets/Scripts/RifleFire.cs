@@ -88,8 +88,8 @@ public class RifleFire : MonoBehaviour {
         RaycastHit hit;
 
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        {
-            EnemyTarget enemyTarget = hit.transform.GetComponent<EnemyTarget>();
+        {            
+            EnemyTarget enemyTarget = hit.transform.GetComponent<EnemyTarget>(); // convert this to abstract class
 
             if (enemyTarget != null)
             {
@@ -107,7 +107,6 @@ public class RifleFire : MonoBehaviour {
             GameObject bulletObject = Instantiate(bulletTex[UnityEngine.Random.Range(0, 2)], hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
             bulletObject.transform.parent = hit.transform; // we made bullets the children of the object they hit, so there will be no floating bullet texture on dynamic objects.
             Destroy(bulletObject, 2f);
-
         }
 
     }
