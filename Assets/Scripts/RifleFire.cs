@@ -88,18 +88,24 @@ public class RifleFire : MonoBehaviour {
         RaycastHit hit;
 
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        {            
-            EnemyTarget enemyTarget = hit.transform.GetComponent<EnemyTarget>(); // convert this to abstract class
+        {
+            Damagable damagable = hit.transform.GetComponent<Damagable>();          
 
-            if (enemyTarget != null)
+            if (damagable != null)
             {
-                enemyTarget.KillDamage(fireDamage);
+                damagable.TakeDamage(5); // todo make it public variable
             }
+            //EnemyTarget enemyTarget = hit.transform.GetComponent<EnemyTarget>(); // convert this to abstract class
 
-            if (hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * rifleImpactForce);
-            }
+            //if (enemyTarget != null)
+            //{
+            //    enemyTarget.KillDamage(fireDamage);
+            //}
+
+            //if (hit.rigidbody != null)
+            //{
+            //    hit.rigidbody.AddForce(-hit.normal * rifleImpactForce);
+            //}
 
             GameObject impactGameObject = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGameObject, 1.4f);

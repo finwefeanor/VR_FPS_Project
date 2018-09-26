@@ -23,7 +23,8 @@ public class EnemyTarget : MonoBehaviour {
         scoreBoard = FindObjectOfType<ScoreBoard>();
     }
 
-    private void AddBoxCollider() {
+    private void AddBoxCollider() 
+    {
         Collider boxCollider = gameObject.AddComponent<BoxCollider>();
         boxCollider.isTrigger = false;
     }
@@ -45,10 +46,10 @@ public class EnemyTarget : MonoBehaviour {
         }
     }
 
-    private void ProcessHit() {
+    private void ProcessHit() 
+    {
         //call ScoreHit from ScoreBoard class
-        scoreBoard.ScoreHit(scorePerHit);
-        
+        scoreBoard.ScoreHit(scorePerHit);       
     }
 
     private void Death() 

@@ -3043,6 +3043,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000011275823026, guid: c4fa03dde2a5a52439028e5fba052e5c,
     type: 2}
   m_PrefabInternal: {fileID: 462004614}
+--- !u!114 &462004617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 462004616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 022f910dccd3fe44bb6bc88dab4ff511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  scorePerHit: 10
+  health: 0
+  destroyedVersion: {fileID: 1168907351885854, guid: b3dc6d5c1ab8158418b2f82094975753,
+    type: 2}
 --- !u!65 &462004618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3070,21 +3086,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &462004620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 462004616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5441d74720954a4483cb3784b54026e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathFX: {fileID: 1168907351885854, guid: b3dc6d5c1ab8158418b2f82094975753, type: 2}
-  scorePerHit: 10
-  parent: {fileID: 919716509}
-  health: 20
 --- !u!4 &462004622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011311866092, guid: c4fa03dde2a5a52439028e5fba052e5c,
@@ -6393,6 +6394,22 @@ MonoBehaviour:
   scorePerHit: 15
   parent: {fileID: 919716509}
   health: 50
+--- !u!114 &1044197158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1044197156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f8e6053ba46e94db4e6957be39e7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  scorePerHit: 12
+  health: 0
+  deathFX: {fileID: 100010, guid: 96bbe886b518d17479b28dc0890ed89d, type: 2}
+  parent: {fileID: 919716509}
 --- !u!1 &1053592828
 GameObject:
   m_ObjectHideFlags: 0

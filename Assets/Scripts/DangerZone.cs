@@ -48,14 +48,10 @@ public class DangerZone : MonoBehaviour {
         {
             Attack();
         }
-
-        if (playerHealth.currentHealth <= 0)
-        {
-            print("PlayerDead");
-        }
     }
 
-    void Attack() {
+    void Attack() 
+    {
         // Reset the timer.
         timer = 0f;
 
