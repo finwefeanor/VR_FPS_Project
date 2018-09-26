@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FlashLight : MonoBehaviour 
 {
-    private bool isFlashLightOpen = false;
     [SerializeField] bool isNotInRange;
 
     [SerializeField] Light flashLight;
@@ -12,8 +11,6 @@ public class FlashLight : MonoBehaviour
     Camera fpsCam;
     
     void Start() {
-        isNotInRange = true;
-        //isFlashLightOpen = false;
         flashLight = GetComponentInChildren<Light>();
         fpsCam = GetComponentInParent<Camera>();            
     }
@@ -22,9 +19,9 @@ public class FlashLight : MonoBehaviour
     {
         if (fpsCam.transform.eulerAngles.z <= 360f && fpsCam.transform.eulerAngles.z > 335f) //opposite range check
         {
-            isNotInRange = true;           
+            isNotInRange = true;        // means we are not in the flashlight's roll range.
         }
-        else if(isNotInRange)
+        else if(isNotInRange) // if "isNotInRange" is true then we can run flashlight
         {
             FlashLightControl();
         }
@@ -32,9 +29,9 @@ public class FlashLight : MonoBehaviour
 
     void FlashLightControl() 
     {
-        if (fpsCam.transform.eulerAngles.z <= 335f && fpsCam.transform.eulerAngles.z > 285f && isNotInRange)
+        if (fpsCam.transform.eulerAngles.z <= 335f && fpsCam.transform.eulerAngles.z > 285f) // the range we want to run flashligt
         {
-            isNotInRange = false;
+            isNotInRange = false; // we are in the range.
             ToggleFlashLight();
         }
     }
