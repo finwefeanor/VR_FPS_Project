@@ -9,7 +9,7 @@ public class DamageOnClick : MonoBehaviour {
     {
 	    if (Input.GetMouseButtonDown(0))
         {
-            var damageables = FindObjectsOfType<Damagable>();
+            var damageables = FindObjectsOfType<Damageable>();
             foreach (var damageable in damageables)
             {
                 damageable.TakeDamage(1);

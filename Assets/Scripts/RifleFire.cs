@@ -89,11 +89,11 @@ public class RifleFire : MonoBehaviour {
 
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Damagable damagable = hit.transform.GetComponent<Damagable>();          
+            Damageable damageable = hit.transform.GetComponent<Damageable>();          
 
-            if (damagable != null)
+            if (damageable != null)
             {
-                damagable.TakeDamage(5); // todo make it public variable
+                damageable.TakeDamage(5); // todo make it public variable
             }
             //EnemyTarget enemyTarget = hit.transform.GetComponent<EnemyTarget>(); // convert this to abstract class
 

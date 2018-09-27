@@ -3,15 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodenCrate : Damagable, IDestroy
+public class WoodenCrate : Damageable
 {
     public GameObject destroyedVersion;
 
-    public void DestroyObject(GameObject gameObject) {
+    public void DestroyedCrate() {
+        
+    }
+
+    public void DamagedCrate() 
+    {
         if (health <= 0)
         {
-            Instantiate(destroyedVersion, transform.position, transform.rotation);
-            Destroy(gameObject);
+            print("this is working");
+            //Instantiate(destroyedVersion, transform.position, transform.rotation);
+            //Destroy(gameObject);
         }
     }
+
+
 }

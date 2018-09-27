@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Damagable : MonoBehaviour, ITakeDamage
+public abstract class Damageable : MonoBehaviour, ITakeDamage
 {
     [SerializeField]  public int maxHealth;
 
@@ -41,11 +41,12 @@ public abstract class Damagable : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(int damage)
     {
-        DamageScore();
         health -= damage;
+        DamageScore();
+       
         if (health <= 0)
         {
-            Destroy(gameObject);
+            health = 0;
         }
     }
 
