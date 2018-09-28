@@ -5,19 +5,10 @@ using UnityEngine;
 
 public class Barrel : Damageable, ITakeDamage
 {
-    private int maxHealth = 20;
-    [SerializeField]
-    GameObject deathFX;
-    private int health;
-    [SerializeField]
-    Transform parent;
+    [SerializeField] GameObject deathFX;
+    //[SerializeField] Transform parent; //todo look for this and ask about it in Argon Assault
 
-    void Awake() {
-        health = maxHealth;
-    }
-
-    public void TakeDamage(int damage) 
-    {
+    public void TakeDamage(int damage) {
         health -= damage;
         if (health <= 0)
         {
@@ -28,7 +19,7 @@ public class Barrel : Damageable, ITakeDamage
     private void Death() {
         //this creates explosion in the place of enemy ships when they get destroyed
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
-        fx.transform.parent = parent;
+        //fx.transform.parent = parent;
         Destroy(gameObject);
     }
 }

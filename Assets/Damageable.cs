@@ -11,7 +11,7 @@ public abstract class Damageable : MonoBehaviour, ITakeDamage
 
     ScoreBoard scoreBoard;
 
-    public int health;
+    internal int health;
 
     private void Awake() {
         health = maxHealth;
@@ -41,13 +41,13 @@ public abstract class Damageable : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
         DamageScore();
+        //health -= damage;
        
-        if (health <= 0)
-        {
-            health = 0;
-        }
+        //if (health <= 0)
+        //{
+        //    health = 0;
+        //}
     }
 
     private void DamageScore() 
